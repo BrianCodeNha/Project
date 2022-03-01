@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+ <p>Click the button to display an alert box.</p>
+
+<button onclick="notify();">Try it</button>
+<p id="name" style="font-weight:bold;"></p>
+<p id="email" style="font-weight:bold;"></p>
+<p id="job" style="font-weight:bold;"></p>
+<p id="city" style="font-weight:bold;"></p>
+<p id="mobile" style="font-weight:bold;"></p>
+<p id="age" style="font-weight:bold;"></p>
+
+<div id="show" style="display:none;">
+<button>Bước tiếp theo </button>
+</div>
+
+<script>
+
+function notify() {
+   alert("Chào mừng bạn đến với ứng dụng JavaScript đầu tiên");
+   //định nghĩa và nhập giá trị cho biến
+   
+ var name = prompt("Hãy nhập tên của bạn",""); 
+ 
+ var mobile = prompt("Hãy nhập số điện thoại của bạn","");
+ 
+ var city = prompt("Hãy nhập thành phố bạn đang sống","");
+
+ var year = prompt("Hãy nhập năm sinh của bạn","");
+ 
+ 
+ 
+ //xuất thông tin của user lên màn hình
+ if (name != null) {
+    document.getElementById("name").innerHTML =
+    "Name: " + name;
+  }
+    
+  if (city != null) {
+    document.getElementById("city").innerHTML =
+    "City: " + city;
+  }
+ 
+if (mobile != null){
+    document.getElementById("mobile").innerHTML =
+    "Mobile: " + mobile;
+  }
+  
+  // khi năm sinh lớn hơn hoặc bằng năm hiện tại --> nhập lại năm sinh.
+  
+  while (year > 2021) {
+    var year = prompt("Hãy nhập lại năm sinh của bạn","");
+  
+  }
+  
+  // khi năm nhập nhỏ hơn năm hiện tại --> tính tuổi hiện tại.
+  
+  if(year < 2021) {
+	age = 2021 - year;
+    document.getElementById("age").innerHTML =
+    "Tuổi: " + age;
+  }
+
+// hiện thị div đã ẩn.
+
+document.getElementById('show').style.display= "block";
+
+// Thêm thông tin cá nhân
+ var email = prompt("Hãy nhập email của bạn","");
+ 
+ var job = prompt("Hãy nhập công việc của bạn","");
+   
+if (email != null) {
+    document.getElementById("email").innerHTML =
+    "Email: " + email;
+  }
+  
+ if (job != null) {
+    document.getElementById("job").innerHTML =
+    "Job: " + job;
+  }
+}
+
+</script>
+
+</body>
+</html>

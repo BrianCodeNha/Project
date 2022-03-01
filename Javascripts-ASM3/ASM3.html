@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+	<script src="js/jsquery.js"></script>
+	<style>
+	table {
+	width:100%;
+	}
+	table, th, td {
+		border: 1px solid black;
+		margin: auto;
+		padding: 5px;
+		
+	}
+	#tab {
+		margin:auto;
+		width: 40%;
+		padding: 0px;
+		background: linear-gradient(35deg,#CCFFFF,#FFCCCC);
+		border:none;
+	}
+	#bang {
+		background-color: #F4F4F4;
+		vertical-align: middle;
+		
+	}
+	.gioi {
+		color: red;
+	}
+	
+	</style>
+</head>
+<body>
+ <h1 style="text-align:center;">Class Marksheet</h1>
+<div style="text-align:center;">
+
+<table id="tab">
+	<tr>
+		<th><p id="name" style="font-weight:bold;">Họ tên</p></th>
+		<td><input type = "text" id="ten"></td>
+	</tr>
+	<tr>
+		<th><p id="math" style="font-weight:bold;">Điểm Toán</p></th>
+		<td><input  type = "text" id="toan"></td>
+	</tr>
+	<tr>
+		<th><p id="physics" style="font-weight:bold;">Điểm Lý</p></th>
+		<td><input  type = "text" id="ly"></td>
+	</tr>
+	<tr>
+		<th><p id="chemical" style="font-weight:bold;">Điểm Hoá</p></th>
+		<td><input type = "text" id="hoa"></td>
+	</tr>
+	<tr>
+		<td colspan="2"><button id="nhap">Nhập</button></td>
+	</tr>
+</table>
+
+</div><br>
+<div style="text-align:center;">
+<table id="bang">
+	<tr> 
+		<th>STT</th>
+		<th>Họ tên</th>
+		<th>Toán</th>
+		<th>Lý</th>
+		<th>Hoá</th>
+		<th>Trung Bình</th>
+	</tr>
+
+</table>
+<br>
+<button id="tb">Tính Điểm Trung Bình</button>
+<button id="hsGioi">Xác Định Học Sinh Giỏi</button>
+</div>
+
+<script>
+	$(document).ready(function(){
+		// chuẩn bị sẵn hàm ready đảm bảo trang đã load xong
+		var rNum= 1;
+		
+	$("#nhap").click(function (){
+
+		// alert khi chua nhap gia tri
+
+		if($("#ten").val() == "" || $("#toan").val() == "" || $("#ly").val() == "" || $("#hoa").val() == "" ){
+			alert("Vui lòng nhập thông tin còn thiếu");
+			return;
+		}
+
+	
+		// lấy giá trị của input
+
+		var ten = $("#ten").val();
+		var toan = $("#toan").val();
+		var ly = $("#ly").val();
+		var hoa = $("#hoa").val();
+
+		// chèn giá trị vào bảng
+
+		$("#bang").append("<tr><td>"+rNum+"</td><td>"+ten+"</td><td>"+toan+"</td><td>"+ly+"</td><td>"+hoa+"</td><td>?</td></tr>");
+
+		// tăng số thứ tự & số hàng.
+		rNum ++;
+
+		$('#tab').find('input:text').each(function () {
+                        $(this).val('');
+                    });
+		
+                
+		
+		
+	});
+
+	
+                
+
+	 
+	$("#tb").click(function (){
+
+		// lấy hàng trong bảng
+		var rows = $("#bang tr");
+
+		// tinh gia tri tb
+		$(rows).each(function (){
+
+		var	toan = parseFloat($(this).find("td:eq(2)").text());
+		var	ly = parseFloat($(this).find("td:eq(3)").text());
+		var	hoa = parseFloat($(this).find("td:eq(4)").text());
+		var tb = (toan + ly + hoa)/3;
+		var round = Math.round(tb*10)/10;
+		
+		// gan gia tri tb
+
+		$(this).find("td:eq(5)").html(round);
+
+		});
+		});
+
+	$("#hsGioi").click(function (){
+
+		$("#bang tr").each( function (){
+			var tb = $(this).find("td:eq(5)").text();
+			if (tb >= 8){
+				
+				$(this).addClass("gioi");
+				$(this).find("td:eq(5)").html("<img src =\"img/icon.jpg\" width=\"25px\"> "+tb);
+			}
+
+		});
+
+
+		});
+			
+
+	});
+			
+
+     
+</script>
+
+</body>
+</html>

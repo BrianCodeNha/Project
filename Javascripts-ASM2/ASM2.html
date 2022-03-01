@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+	<style>
+	table {
+	width:100%;
+	}
+	table, th, td {
+		border: 1px solid black;
+		margin: auto;
+		padding: 5px;
+		
+	}
+	
+	
+	</style>
+</head>
+<body>
+ <h1 style="text-align:center;">Class Marksheet</h1>
+<div style="text-align:center;">
+<p id="name" style="font-weight:bold;">Họ tên <input type = "text" id="ten"></p>
+<p id="math" style="font-weight:bold;">Điểm Toán <input  type = "number" id="toan"></p>
+<p id="physics" style="font-weight:bold;">Điểm Lý <input  type = "number" id="ly"></p>
+<p id="chemical" style="font-weight:bold;">Điểm Hoá <input type = "number" id="hoa"></p><br>
+<button id="nhap">Nhập</button>
+</div><br>
+<div style="text-align:center;">
+<table id="bang">
+	<tr> 
+		<th>STT</th>
+		<th>Họ tên</th>
+		<th>Toán</th>
+		<th>Lý</th>
+		<th>Hoá</th>
+		<th>Trung Bình</th>
+	</tr>
+
+</table>
+<br>
+<button id="tb">Tính Điểm Trung Bình</button>
+<button id="hsGioi">Xác Định Học Sinh Giỏi</button>
+</div>
+
+<script>
+      var nhap = document.getElementById("nhap");
+	  nhap.addEventListener("click",showData);
+	  var rNum = 1;
+	  var testScore = {
+			  name: "",
+			  math: 0,
+			  physical: 0,
+			  chemistry: 0,
+		  };
+		  
+		  
+	  
+	  function showData (){
+		  var bang = document.getElementById("bang");		  
+		  
+		  newRow = bang.insertRow(rNum);
+		  
+		  cell1 = newRow.insertCell(0);
+		  cell2 = newRow.insertCell(1);
+		  cell3 = newRow.insertCell(2);
+		  cell4 = newRow.insertCell(3);
+		  cell5 = newRow.insertCell(4);
+		  cell6 = newRow.insertCell(5);
+
+		  var ten = document.getElementById("ten").value; 
+		  
+		  var toan = document.getElementById("toan").value; 
+		  
+		  var ly = document.getElementById("ly").value; 
+		  
+		  var hoa = document.getElementById("hoa").value; 
+
+		  
+		  
+		  
+		  
+		  cell1.innerHTML = rNum; 
+		  cell2.innerHTML = ten;
+		  cell3.innerHTML = toan;
+		  cell4.innerHTML = ly;
+		  cell5.innerHTML = hoa;
+		  cell6.innerHTML = "?";
+		  rNum ++;
+		  
+		  
+	  }
+
+	  var tb = document.getElementById("tb");
+	  tb.addEventListener("click",tinhTB);
+   function tinhTB(){		
+			var bang = document.getElementById("bang");
+		for (var i = 1; i < rNum +1; i++){
+
+			var a = parseFloat(bang.rows[i].cells[2].textContent);
+			var b = parseFloat(bang.rows[i].cells[3].textContent);
+			var c = parseFloat(bang.rows[i].cells[4].textContent);
+			tb = (a+b+c)/3;
+
+			bang.rows[i].cells[5].innerHTML = Math.round(tb*10)/10;
+		}
+   }
+   var hsGioi = document.getElementById("hsGioi");
+   hsGioi.addEventListener("click",xacDinhHSGioi);
+   	function xacDinhHSGioi (){
+
+		var bang = document.getElementById("bang");
+		for (var i = 1; i < rNum +1; i++){
+			var tb = bang.rows[i].cells[5].textContent;
+			if (tb >= 8.0){
+				bang.rows[i].style.color="red";
+			}
+		}
+	   }
+
+	 
+</script>
+
+</body>
+</html>
