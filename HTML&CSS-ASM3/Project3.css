@@ -1,0 +1,200 @@
+ * {
+  box-sizing: border-box;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+p {
+            font-size:130%;
+        }
+        li {
+            font-size:115%;
+        }
+   #wrapper{
+    width: 100%;
+   }
+  .menu , .menu li {
+    display: inline-block;
+    padding: 5px;
+    }
+    .menumain {
+    background-color: #4F5E6D;
+  }
+  .menu a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 18px;
+  }
+ 
+  
+     
+       #title {
+        color:#383535;
+        clear:both;
+        border-bottom: black solid 1px;
+       }
+       #title h1 {
+        font-size: 65px;
+        
+       }
+       #title p {
+        position: relative;
+        bottom: 30px;
+        font-family:sans-serif;
+        font-size: 16px;
+        
+       }
+       #title1 {
+       color:#383535;
+       font-family: sans-serif;
+       
+       width: inherit;
+       display: inline-block;
+       
+       
+       }
+       #title1 p {
+        font-family:sans-serif;
+        font-size: 16px;
+        font-size: 15px;
+        
+       }
+        #title1 h2 {
+        font-size: 65px;        
+       }
+    
+        
+                
+      .footermain {font-family: sans-serif;}
+      .footermain h2{ font-size:50px; }
+      
+       
+       [class*="col-"]{
+        width: 100%;
+        float: left;
+        margin:auto;
+        
+       } 
+       
+
+@media only screen and (min-width:768px){
+        .col-sm-1 {width: 8.33%}
+        .col-sm-2 {width: 16.66%}
+        .col-sm-3 {width: 25%}
+        .col-sm-4 {width: 33.33%}
+        .col-sm-5 {width: 41.66%}
+        .col-sm-6 {width: 50%}
+        .col-sm-7 {width: 58.33%}
+        .col-sm-8 {width: 66.66%}
+        .col-sm-9 {width: 75%}
+        .col-sm-10 {width: 83.33%}
+        .col-sm-11 {width: 91.66%}
+        .col-sm-12 {width: 100%}
+        .box img{
+        display: block;
+        padding: 10px;
+        
+        margin:auto;
+        max-width: 100%;
+        height: auto;
+       }
+       .menu a{
+        font-size: 15px;
+  }
+}
+       
+@media only screen and (min-width:992px){
+        .col-md-1 {width: 8.33%}
+        .col-md-2 {width: 16.66%}
+        .col-md-3 {width: 25%}
+        .col-md-4 {width: 33.33%}
+        .col-md-5 {width: 41.66%}
+        .col-md-6 {width: 50%}
+        .col-md-7 {width: 58.33%}
+        .col-md-8 {width: 66.66%}
+        .col-md-9 {width: 75%}
+        .col-md-10 {width: 83.33%}
+        .col-md-11 {width: 91.66%}
+        .col-md-12 {width: 100%}
+    .background{
+          width: 100%;
+          height: 380px;
+          background-image: url(img/lodging.png);
+          background-size: cover;
+          background-repeat:no-repeat;          
+        }
+     .menumain {background-color: #FFFFFF;}
+     .menu a{
+    text-decoration: none;
+    color: #8b8a8c;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 12px;
+  }
+  #menuleft{
+    position:relative;
+    left:50px;
+  }
+  #menuright{
+    float:right;
+    position:relative;
+    right:50px;} 
+   #title {
+        position: absolute;
+        margin-top:30px;
+        margin-left:40px;
+        color:white;
+        clear:both;
+       }
+       #title h1 {
+        font-size: 65px;        
+        font-weight: bold;
+       }
+       #title p {
+        position:relative;
+        bottom: 40px;
+        font-family:sans-serif;
+        font-size: 24px;
+       } 
+    #title1 {
+       font-family: sans-serif;
+       background-color: #dddddd;
+       width: inherit;
+       display: inline-block;
+       text-indent: 40px;
+        }
+       #title1 p {font-size: 15px;}
+       
+       .box img{
+        display: block;
+        padding: 10px;
+        background-color: #dddddd;
+        margin:auto;
+        max-width: 100%;
+        height: auto;
+       }
+        .footer {      
+       display: block;
+       padding: 50px;
+       margin: auto;
+       max-width: 100%;
+       height: auto;
+       font-size: 85%;   
+       
+       }
+       .footermain {    
+       display:inline-block;
+       font-family: sans-serif;
+       background-color: #F7F7F7;       
+       
+      }
+      .footermain h2{ font-size:20px; }
+  }
+
+  
