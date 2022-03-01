@@ -1,7 +1,0 @@
-select s.Name 
-from Students s, Friends f, Packages ps, Packages pf
-where s.ID = f.id
-and s.ID = ps.ID -- student salary
-and f.Friend_ID = pf.ID
-and ps.salary < pf.salary 
-order by pf.salary
